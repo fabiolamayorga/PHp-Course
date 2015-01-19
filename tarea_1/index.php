@@ -21,6 +21,14 @@
 	echo "Cantidad de veces que el monosilibo 'un' es encontrado en el string = ";
 	echo substr_count($stringToCount, 'un');
 	?>
+	<p>Funcion <strong>trim</strong></p>
+	<?php
+	$textToTrim = "Esto es una prueba del funcionamiento de la funcion trim";
+	echo $textToTrim;
+	echo "Texto con trim() aplicado<br>";
+	$trimmed = trim($textToTrim);
+	var_dump($trimmed);
+	?>
 	
 </body>   
 </html>
