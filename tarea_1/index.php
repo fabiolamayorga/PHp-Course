@@ -45,6 +45,12 @@
 	$fecha = new DateTime('2015-02-01');
 	echo $fecha->format('d-m-Y');	
 	?>
+	<h3>Calendario</h3>
+	<p>Funcion <strong>cal_days_in_month</strong>, calcula la cantidad de dias en un mes especifico</p>
+	<?php
+	$cantidadMesesAbril = cal_days_in_month(CAL_GREGORIAN, 4, 2015);
+	echo "Cantidad de dias en el mes de abril, 2015 ".$cantidadMesesAbril;
+	?>
 	<h2>Procesamiento y generacion de imagenes</h2>
 	<h3>Funcion getimagesize()</h3>
 	<?php
