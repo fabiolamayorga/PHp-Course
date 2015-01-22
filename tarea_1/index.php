@@ -6,7 +6,8 @@
     
 <body>
 	<h1>Tarea de librerias PHP</h1>
-	<h2>Clase String</h2>
+	<h2>Manejo de Strings</h2>
+	<h3>Clase String</h3>
 	<p>Funcion <strong>substr_replace()</strong></p>
 	<?php
 	$string = "Hola";
@@ -17,7 +18,7 @@
 	<p>Funcion <strong>substr_count()</strong></p>
 	<?php
 	$stringToCount = "Esto es una prueba y una muestra de como funciona substr_count";
-	echo $stringToCount."<br>";
+	echo "String a probar= ". $stringToCount."<br>";
 	echo "Cantidad de veces que el monosilibo 'un' es encontrado en el string = ";
 	echo substr_count($stringToCount, 'un');
 	?>
@@ -37,13 +38,40 @@
 	echo "Primera aparicion de la palabra 'prueba' en el string anterior<br> ";
 	echo strpos($stringToPos, "prueba");
 	?>
-	<h2>Clase Date and Time</h2>
+	<h2>Manejo de fecha</h2>
+	<h3>Clase Date and Time</h3>
 	<p>Funcion <strong>DateTime::format() </strong></p>
 	<?php
 	$fecha = new DateTime('2015-02-01');
 	echo $fecha->format('d-m-Y');	
 	?>
-	
-	
+	<h2>Procesamiento y generacion de imagenes</h2>
+	<h3>Funcion getimagesize()</h3>
+	<?php
+	$filename="labrador_retriever.jpg";
+	?>
+	<img src="labrador_retriever.jpg"><br>
+	<?php
+	$size = getimagesize($filename);
+	echo "Atributos de la imagen <br>";
+	foreach ($size as $valor) {
+		echo $valor."<br>";
+	}
+	echo  "Cantidad de atributos " . count($size);
+	?>
+	<h2>Extenciones criptograficas</h2>
+	<h3>Funcion hash()</h3>		
+	<form method="get">
+		<label>Ingrese una palabra para encriptar</label>
+		<input name="palabra" type="text"/>
+		<button>Encriptar</button>
+	</form>
+	<?php
+		$palabra = $_GET['palabra'];
+
+		echo "Palabra encriptada " . hash("md5", $palabra);
+
+	?>
+
 </body>   
 </html>
